@@ -15,7 +15,7 @@ usersRouter.post("/signup", async (req, res) => {
         const message = `Le contact ${newContact.username} a bien été créé !`;
         res.json({message: message, contact: newContact});
     } catch (error) {
-        res.status(500).json({error: error});
+        res.status(500).json({error: error.message});
     }
 });
 
@@ -25,7 +25,7 @@ usersRouter.post("/login", async (req, res) => {
         const user = await db_users.getUserByUserName(userInfo.username);
         if (user === undefined) {
             //For security reason (nobody needs to know the user is not defined in the DB), the message is general
-            res.status(401).json({error: "Login / mot de passe incorrects 1"});
+            res.status(401).json({error: "Login / mot de passe incorrects"});
         } else {
             const isPwdValid = await bcrypt.compare(req.body.password, user.password)
             if (!isPwdValid) {

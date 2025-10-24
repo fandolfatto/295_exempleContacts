@@ -2,7 +2,6 @@ import express from "express";
 import { db }  from "../db/db-contacts.mjs";
 import {isValidId, isValidEmail} from "../helper.mjs";
 import auth from "../auth/auth.mjs";
-//Code made in ase of success, we do not treat here the error case (id not existing for example)
 
 const contactsRouter = express.Router();
 
