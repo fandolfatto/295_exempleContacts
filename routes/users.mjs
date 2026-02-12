@@ -31,6 +31,8 @@ usersRouter.post("/login", async (req, res) => {
             if (!isPwdValid) {
                 res.status(401).json({error: "Login / mot de passe incorrects"});
             } else {
+                //The token has 3 parts : the header that contains the sign algorithm used (symetric by default), the payload (data) and the signature (like a print of the header and the payload)
+                //The token is encoded in base64
                 const token = jwt.sign(
                     { userId: user.id },
                     privateKey,
