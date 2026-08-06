@@ -78,6 +78,16 @@ const db = {
             if (con) await db.disconnectFromDatabase(con);
         }
     },
+
+    disconnectFromDatabase: async (connection) => {
+        try {
+            await connection.end();
+            console.log('Déconnexion de la base de données réussie');
+        } catch (error) {
+            console.error('Erreur lors de la déconnexion de la base de données :', error);
+            throw error;
+        }
+    }
 }
 
 export { db }
