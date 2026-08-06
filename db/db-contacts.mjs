@@ -1,20 +1,30 @@
 import mysql from 'mysql2/promise';
 
-const con = await mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "P@ssw0rd",
-    port:3308,
-    database: "app_contacts",
-});
-
 const db = {
 
+
+    connectToDatabase :async () => {
+        const con = mysql.createConnection({
+            host: "localhost",
+            user: "root", //use another user
+            password: "P@ssw0rd",
+            port: 3308, //usually we use the 3306 port
+            database: "app_contacts",
+        });
+        return con;
+    },
+
     getAllContacts: async () => {
+        let con;
+
         //the getAllContacts function waits until the query is finished to execute
         //if there is some code after the call of this function, it will be executed without waiting the execution of this function
+        con = await db.connectToDatabase();
         const [rows] = await con.query('SELECT * FROM contacts');
         return rows;
+
+        if (con) await db.disconnectFromDatabase(con);
+
     },
 
     getContactById: async ( id) => {
