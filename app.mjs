@@ -4,7 +4,7 @@ import contactsRouter from './routes/contacts.mjs';
 // On crée une application Express
 const app = express();
 // On définit le port sur lequel le serveur va écouter
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 app.use(express.json());
 
