@@ -10,4 +10,5 @@ let contacts = [
         email: "jane-smith@gmail.com",
     }
 ];
+//export principal de ce fichier
 export default contacts;
