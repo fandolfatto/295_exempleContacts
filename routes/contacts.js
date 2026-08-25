@@ -1,8 +1,11 @@
 import express from "express";
 import contacts from "../db/mock-contacts.js";
 
-//Code made in ase of success, we do not treat here the error case (id not existing for example)
+//Code made in case of success, we do not treat here the error cases (id not existing for example)
 
+// Creation of a router that enables to manage contacts
+// This router has several routes  with different HTTP methods, different endpoints
+// An Express router allows you to group multiple routes related to the same resource or functionality.
 const contactsRouter = express.Router();
 contactsRouter.get("/", (req, res) => {
     res.json({contacts});
