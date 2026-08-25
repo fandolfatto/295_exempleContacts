@@ -1,6 +1,6 @@
 //On importe le module express (il doit être installé avec "npm install express")
 import express from 'express';
-import contacts from "./db/mock-contacts.mjs";
+import contacts from "./db/mock-contacts.js";
 // On crée une application Express qui est donnée au serveur HTTP pour qu'elle puisse traiter les requêtes reçues
 const app = express();
 // On définit le port sur lequel le serveur va écouter
