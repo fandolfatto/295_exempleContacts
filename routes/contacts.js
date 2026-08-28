@@ -18,7 +18,11 @@ contactsRouter.get("/:id", (req, res) => {
 });
 
 contactsRouter.post("/", (req, res) => {
+    //object destructuring : get name and email properties of the req.body object and create 2 variables with these names.
     const {name, email} = req.body;
+    // same result as the following way of writing
+    // const name = req.body.name;
+    // const email = req.body.email;
     const id = contacts.length + 1; // Explain why it is not completly right and improve it
     const newContact={id, name, email};
     contacts.push(newContact);
