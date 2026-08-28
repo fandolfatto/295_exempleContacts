@@ -36,6 +36,11 @@ contactsRouter.put('/:id', (req, res) => {
     const index = contacts.findIndex(contact => contact.id === id);
     //other way : const index = contacts.findIndex(getContact, id);
     contacts[index] = { id, name, email };
+    // the same as {
+    //     id: id,
+    //     name: name,
+    //     email: email
+    // }
     res.json({ message: 'Contact updated', contact: contacts[index] });
 });
 
