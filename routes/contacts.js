@@ -25,6 +25,8 @@ contactsRouter.post("/", (req, res) => {
     // const email = req.body.email;
     const id = contacts.length + 1; // Explain why it is not completly right and improve it
     const newContact={id, name, email};
+    // same way of writing
+    // const newContact={id:id, name:name, email:email};
     contacts.push(newContact);
     const message = `Le contact ${newContact.name} a bien été créé !`;
     res.json({message : message, contact : newContact});
