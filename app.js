@@ -4,8 +4,10 @@ import contactsRouter from './routes/contacts.js';
 // On crée une application Express
 const app = express();
 // On définit le port sur lequel le serveur va écouter
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
+// permet à Express de lire les données JSON reçues dans le corps des requêtes et de les rendre disponibles dans req.body
+// appliqué à toutes les requêtes qui passent par cette application, en le notant avant les routes concernées
 app.use(express.json());
 
 // On crée une route GET sur la racine ("/")
@@ -15,8 +17,8 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-// we mount-use this router in the application
-app.use('/api/contacts', contactsRouter);
+// on monte ce router dans l'application
+app.use('/contacts', contactsRouter);
 
 // On démarre le serveur et on lui dit d’écouter sur le port défini
 // Une fois lancé, le message est affiché dans la console
