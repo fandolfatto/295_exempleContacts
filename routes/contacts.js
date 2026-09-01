@@ -1,5 +1,5 @@
 import express from "express";
-import { db }  from "../db/db-contacts.mjs";
+import { db }  from "../db/db-contacts.js";
 
 //Code made in ase of success, we do not treat here the error case (id not existing for example)
 

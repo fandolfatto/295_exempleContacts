@@ -1,6 +1,6 @@
 //On importe le module express (il doit être installé avec "npm install express")
 import express from 'express';
-import contactsRouter from './routes/contacts.mjs';
+import contactsRouter from './routes/contacts.js';
 // On crée une application Express
 const app = express();
 // On définit le port sur lequel le serveur va écouter
