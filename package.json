@@ -1,0 +1,28 @@
+{
+  "name": "295_exemplecontacts",
+  "version": "1.0.0",
+  "description": "création d'une API pour gérer des contacts ",
+  "homepage": "https://github.com/fandolfatto/295_exempleContacts#readme",
+  "bugs": {
+    "url": "https://github.com/fandolfatto/295_exempleContacts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fandolfatto/295_exempleContacts.git"
+  },
+  "license": "ISC",
+  "author": "FAO",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.24.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
