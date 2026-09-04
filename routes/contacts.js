@@ -1,6 +1,6 @@
 import express from "express";
-import { db }  from "../db/db-contacts.mjs";
-import {isValidId, isValidEmail} from "../helper.mjs";
+import { db }  from "../db/db-contacts.js";
+import {isValidId, isValidEmail} from "../helper.js";
 
 //Code made in ase of success, we do not treat here the error case (id not existing for example)
 
