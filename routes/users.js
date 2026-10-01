@@ -1,10 +1,8 @@
 import express from "express";
-import { db_users }  from "../db/db-users.mjs";
-import {isValidId} from "../helper.mjs";
-import {db} from "../db/db-contacts.mjs";
+import { db_users }  from "../db/db-users.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import {privateKey} from "../auth/private_key.mjs"
+import {privateKey} from "../auth/private_key.js"
 
 const usersRouter = express.Router();
 
