@@ -34,7 +34,7 @@ usersRouter.post("/login", async (req, res) => {
                 const token = jwt.sign(
                     { userId: user.id },
                     privateKey,
-                    { expiresIn: '1y' }
+                    { expiresIn: '1h' }
                 )
                 res.status(200).json({message: 'user connecté', token: token});
             }
